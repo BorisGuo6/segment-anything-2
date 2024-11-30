@@ -102,7 +102,6 @@ def build_sam2_camera_predictor(
     hydra_overrides.extend(hydra_overrides_extra)
 
     # Read config and init model
-    # with initialize(config_path="/home/shaol/gjx/Cloth-Flod-in-isaac-sim/3rdparty/segment-anything-2/sam2"):
     cfg = compose(config_name=config_file, overrides=hydra_overrides)
     OmegaConf.resolve(cfg)
     model = instantiate(cfg.model, _recursive_=True)
